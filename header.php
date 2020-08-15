@@ -45,14 +45,18 @@
 		-->
 		<?php if(is_front_page(  )): ?>
 
-			<div id="img-banner" class="border-bottom parallax" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>')">
+			<div id="img-banner" class="border-bottom parallax d-flex flex-column justify-content-center" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>')">
 				
 				<div class="container">
 					<div id="legendText" class="d-flex flex-column">
 						<h1 class="mt-3 h5 text-left"><?= $theme_opts['legend_logo']; ?></h1>
 						<a id="btnJoin" href="/" role="button" class="mb-4 w-25 p-2 btn btn-primary btn-lg align-self-end text-truncate">Join in!</a>
-					</div>
+					</div>					
 				</div>	
+				<div class="mt-5">						
+					<a class="mouse" href="#page2"><span></span></a>
+					<a class="arrow"><span></span></a>
+				</div>
 			</div>
 
 		<?php endif; ?>

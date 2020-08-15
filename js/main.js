@@ -1,13 +1,13 @@
 jQuery(document).ready(function ($) {
-    var animationEndEvent = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+    const animationEndEvent = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
     // -------------------------------------------------------------
     //   CONFIGURATION SLIDER
     // -------------------------------------------------------------
     (function () {
-        var $frame  = $('#basic');
-        var $slidee = $frame.children('ul').eq(0);
-        var $wrap   = $frame.parent();
+        let $frame  = $('#basic');
+        let $slidee = $frame.children('ul').eq(0);
+        let $wrap   = $frame.parent();
 
         // Call Sly on frame
         $frame.sly({
@@ -35,13 +35,29 @@ jQuery(document).ready(function ($) {
         });
     }());
 
-    $('#fullpage').fullpage({
-        //options here
-        autoScrolling:true,
-        scrollHorizontally: true,
-        licenseKey: 'YOUR_KEY_HERE'
-    });
+    // -------------------------------------------------------------
+    //   SCROLLING CROSS BROWSER
+    // -------------------------------------------------------------
+    // Add smooth scrolling to all links
+    $("a").on('click', function(event) {
 
-    //methods
-    $.fn.fullpage.setAllowScrolling(false);
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+        });
+        } // End if
+    });
 });
