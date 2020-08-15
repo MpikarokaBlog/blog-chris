@@ -1,0 +1,97 @@
+/*
+Theme Name: Blog Chris
+Theme URI: http://wordpress.org/themes/blog_chris
+Author: David Andrianarivo
+Author URI: http://wordpress.org/
+Description: This is the theme my sister is using for her blog.
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: BChris
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+#mainNavbar {
+	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);   
+    background-color: rgba(255, 255, 255, .15);
+	filter: blur(0.25px);
+	z-index: 2;
+}
+
+/* Create the parallax scrolling effect */
+.parallax {  	
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+header {
+	color: #fff !important;
+}
+
+#legendText {
+	max-width: 660px;
+}
+
+#img-banner {
+	position: relative;
+	top: -1.5rem;
+}
+
+/*
+@media only screen and (max-width: 768px) {
+}
+*/
+
+
+/**
+*	SLY STYLE   *
+
+*/
+
+.frame ul {
+    list-style: none;
+    height: 100%;
+}
+
+.frame {
+    overflow: hidden;
+}
+
+.frame ul li {
+    float: left;
+    width: 250px;
+    height: 100%;
+}
+
+.scrollbar {
+	margin: 0 0 1em 0;
+	height: 2px;
+	background: #ccc;
+	line-height: 0;
+}
+
+.scrollbar .handle {
+	width: 100px;
+	height: 100%;
+	background: #292a33;
+	cursor: pointer;
+}
+
+.scrollbar .handle .mousearea {
+	position: absolute;
+	top: -9px;
+	left: 0;
+	width: 100%;
+	height: 20px;
+}
+
+.card-img-top {
+	object-fit: cover;
+}
+
+.card {
+	min-height: 384px;
+}
