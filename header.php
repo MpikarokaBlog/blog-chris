@@ -10,14 +10,14 @@
     ?>
 </head>
 <body>
-	<header>
+	<header class="text-light">
 
 		<!--
 		=================================================================
 		=                      NAVBAR FRONT-PAGE
 		=================================================================
 		-->
-		<nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark mb-4 parallax" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>');">
+		<nav id="mainNavbar" class="navbar navbar-expand-md navbar-dark mb-4" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>');">
 			<a class="navbar-brand" href="#">
 				<img class="img-fluid" src="<?= $theme_opts['image_logo_url']; ?>"/>
 			</a>
@@ -45,17 +45,17 @@
 		-->
 		<?php if(is_front_page(  )): ?>
 
-			<div id="img-banner" class="border-bottom parallax d-flex flex-column justify-content-center" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>')">
+			<div id="img-banner" class="border-bottom d-flex flex-column justify-content-around" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>')">
 				
-				<div class="container">
+				<div class="container order-2">
 					<div id="legendText" class="d-flex flex-column">
 						<h1 class="mt-3 h5 text-left"><?= $theme_opts['legend_logo']; ?></h1>
-						<a id="btnJoin" href="/" role="button" class="mb-4 w-25 p-2 btn btn-primary btn-lg align-self-end text-truncate">Join in!</a>
+						<a id="btnJoin" href="/" role="button" class="w-25 btn btn-primary btn-lg align-self-end text-truncate">Join in!</a>
 					</div>					
 				</div>	
-				<div class="mt-5">						
-					<a class="mouse" href="#page2"><span></span></a>
-					<a class="arrow"><span></span></a>
+				<div class="order-3">						
+					<a class="mouse next-page" href="#page2"><span></span></a>
+					<a class="arrow next-page"><span></span></a>
 				</div>
 			</div>
 

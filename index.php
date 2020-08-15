@@ -15,8 +15,10 @@ $theme_opts = get_option('bc_opts');
 	<!-- PARTIE SLIDER -->
 	<div class="section">
 
+		<h4 class="h4">Latest from blog</h4>
+
 		<?php if($query_slider -> have_posts()): ?>
-			<div class="wrap mt-5">		
+			<div class="wrap mt-3">		
 				<div class="frame d-inline-flex" id="basic" style="overflow: hidden;">
 
 					<ul class="clearfix">
@@ -63,7 +65,7 @@ $theme_opts = get_option('bc_opts');
 	<div class="section">
 		<div class="row justify-content-between">
 			<div class="col-sm-12 col-md-6 clearfix">
-				<h2 class="h4 float-left">Here's something for you!</h2>
+				<h4 class="h4 float-left">Here's something for you!</h4>
 				<p class="text-justify text-wrap float-right"><?= $theme_opts['legend_freebie']; ?></p>
 			</div>
 			<div class="col-sm-12 col-md-6 d-flex flex-column">
@@ -90,10 +92,10 @@ $theme_opts = get_option('bc_opts');
 			?>
 
 			<div class="row flex-column">
-				<h2 class="h4"><svg class="animate__animated animate__swing animate__infinite animate__delay-2s" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-headphones" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<h4 class="h4"><svg class="animate__animated animate__swing animate__infinite animate__delay-2s" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-headphones" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" d="M8 3a5 5 0 0 0-5 5v4.5H2V8a6 6 0 1 1 12 0v4.5h-1V8a5 5 0 0 0-5-5z"/>
 					<path d="M11 10a1 1 0 0 1 1-1h2v4a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-3zm-6 0a1 1 0 0 0-1-1H2v4a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-3z"/>
-				</svg> Most recent podcast</h2>
+				</svg> Most recent podcast</h4>
 				<div class="d-inline-flex">
 					<?php while ($query_podcasts -> have_posts()):
 
@@ -116,12 +118,36 @@ $theme_opts = get_option('bc_opts');
 
 		<?php endif;?>
 
-		<hr>
-
 	</div>
 	<!-- FIN PARTIE PODCAST -->
-
 </div>
+
+<!-- PARTIE ABOUT ME -->
+<?php 
+	$args_about = array(
+		'post_type' => 'page',
+		'posts_per_page' => 4, 
+		'pagename' => 'about-me'
+	);
+	$query_about = new WP_Query($args_about);
+?>
+
+<div id="aboutMe" class="border-top border-info" style="background-image: url('<?= $theme_opts['image_banner_url']; ?>');">
+	
+	<div class="container text-light">		
+		<?php while ($query_about -> have_posts()):
+			$query_about -> the_post(); 
+			?>
+			<div class="row">
+				<div class="col-sm-12 col-lg-7">
+					<h3 class="h3 my-5"><?= the_title(); ?></h3>
+					<p class="text-justify"><?= get_the_excerpt($post); ?></p>
+				</div>					
+			</div>
+		<?php endwhile; wp_reset_postdata(); ?>
+	</div>
+</div>
+<!-- FIN PARTIE ABOUT ME -->
 
 <?php wp_footer(); ?>
 </body>

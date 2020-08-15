@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
     //   SCROLLING CROSS BROWSER
     // -------------------------------------------------------------
     // Add smooth scrolling to all links
-    $("a").on('click', function(event) {
+    $("a.next-page").on('click', function(event) {
 
         // Make sure this.hash has a value before overriding default behavior
         if (this.hash !== "") {
@@ -60,4 +60,42 @@ jQuery(document).ready(function ($) {
         });
         } // End if
     });
+
+    // -------------------------------------------------------------
+    //      CONFIGURING JARALLAX
+    // -------------------------------------------------------------
+    /*$('#mainNavbar').jarallax({
+        speed: 0.2,
+        imgPosition: 'center center'
+    });
+
+    $('#img-banner').jarallax({
+        speed: 0.2, 
+        imgPosition: '27% 77%'
+    });*/
+    $('#mainNavbar').jarallax({
+        speed: 0.2,
+        imgPosition: 'initial'
+    });
+
+    $('#img-banner').jarallax({
+        speed: 0.2, 
+        imgPosition: '0% 12%'
+    });
+
+    $('#aboutMe').jarallax({
+        speed: 0.2
+    });
+
+
+    // -------------------------------------------------------------
+    //      CONFIGURING HAMBURGER NAVIGATION
+    // -------------------------------------------------------------
+    let navWrapper = document.querySelector('.nav-wrapper'),
+    navToogler =  document.querySelector('.nav-toogler')
+
+    navToogler.addEventListener('click', function (event) {
+        navWrapper.classList.toggle('active')
+    })
+
 });

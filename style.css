@@ -35,26 +35,11 @@ body {
 #mainNavbar {
 	box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);   
     background-color: rgba(255, 255, 255, .15);
-	filter: blur(0.05px);
 	z-index: 2;
 }
 
-/*==========================
-==		PARALLAX
-============================*/
-.parallax {  	
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-header {
-	color: #fff !important;
-}
-
 #legendText {
-	max-width: 660px;
+	max-width: 30rem;
 }
 
 /*==========================
@@ -63,7 +48,7 @@ header {
 #img-banner {
 	position: relative;
 	top: -1.5rem;
-	height: 25rem;
+	height: 28rem;
 }
 
 /*==========================
@@ -121,15 +106,6 @@ header {
 
 .card {
 	min-height: 384px;
-}
-
-.card-deck {
-  @include media-breakpoint-only(lg) {
-    column-count: 4;
-  }
-  @include media-breakpoint-only(sm) {
-    column-count: 1
-  }
 }
 
 /*==========================
@@ -197,4 +173,12 @@ header {
 	100% {
 		opacity: 1;
 	}
+}
+
+/*================================
+==	  ABOUT ME CUSTOMIZATIONS	
+==================================*/
+#aboutMe {
+	height: 22rem;
+	width: 100%;
 }
